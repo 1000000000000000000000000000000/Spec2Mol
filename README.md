@@ -15,7 +15,7 @@ Create a conda environment:
 
 ```bash
 conda create -n spec2mol python=3.7
-source activate spec2mol
+conda activate spec2mol
 conda install rdkit -c rdkit
 conda install pytorch=1.6.0 torchvision -c pytorch
 ```
