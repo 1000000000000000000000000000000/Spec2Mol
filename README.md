@@ -20,6 +20,12 @@ conda install rdkit -c rdkit
 conda install pytorch=1.6.0 torchvision -c pytorch
 ```
 
+Install MOSES:
+
+```bash
+pip install molsets
+```
+
 ## Generate spectra embeddings:
 
 ```bash
