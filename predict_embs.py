@@ -81,26 +81,23 @@ def main(args):
 
 
     pred_emb = model(spectra)
-
+    torch.save(pred_emb, 'pred_emb.pt')
     return pred_emb
 
 
 
 if __name__ == '__main__':
+    '''
+    csv files format:
+        1st column: m/z values
+        2nd column: intensities
+        comma separated
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument('-pos_low_file', type=str, default=None, help='csv file with positive mode [M+H]+ low energy spectrum')
     parser.add_argument('-pos_high_file', type=str, default=None, help='csv file with positive mode [M+H]+ high energy spectrum')
     parser.add_argument('-neg_low_file', type=str, default=None, help='csv file with positive mode [M-H]+ low energy spectrum')
     parser.add_argument('-neg_high_file', type=str, default=None, help='csv file with positive mode [M-H]- low energy spectrum')
-
-'''
-csv files format:
-    1st column: m/z values
-    2nd column: intensities
-    comma separated
-'''
-
     args = parser.parse_args()
-
+    
     main(args)
-
