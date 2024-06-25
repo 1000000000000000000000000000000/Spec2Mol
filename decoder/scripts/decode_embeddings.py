@@ -42,7 +42,7 @@ def decode(
     for i, input_batch in enumerate(tqdm(train_loader)):
         sk = input_batch[0]
         mu_predicted = get_embeddings_tensor(predicted_embeddings, sk)
-        mu_predicted = mu_predicted.cuda()
+        mu_predicted = mu_predicted.to(config.device)
         smiles_with_precursor.extend(sk)
 
         for j in tqdm(range(num_variants)):
